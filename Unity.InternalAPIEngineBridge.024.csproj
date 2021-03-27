@@ -58,8 +58,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="E:\code\unity\Navmesh\Packages\com.unity.uiwidgets\Runtime\InternalBridge\NoAllocHelpersBridge.cs" />
-     <None Include="E:\code\unity\Navmesh\Packages\com.unity.uiwidgets\Runtime\InternalBridge\InternalBridge.asmdef" />
+     <Compile Include="Assets\UIWidgets\Runtime\InternalBridge\NoAllocHelpersBridge.cs" />
+     <None Include="Assets\UIWidgets\Runtime\InternalBridge\InternalBridge.asmdef" />
  <Reference Include="UnityEditor.UI">
  <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>

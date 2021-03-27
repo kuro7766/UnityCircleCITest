@@ -58,8 +58,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="E:\code\unity\Navmesh\Packages\com.unity.uiwidgets\Editor\UIWidgetsPanelEditor.cs" />
-     <None Include="E:\code\unity\Navmesh\Packages\com.unity.uiwidgets\Editor\Unity.UIWidgets.Editor.asmdef" />
+     <Compile Include="Assets\UIWidgets\Editor\UIWidgetsPanelEditor.cs" />
+     <None Include="Assets\UIWidgets\Editor\Unity.UIWidgets.Editor.asmdef" />
  <Reference Include="UnityEditor.UI">
  <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
