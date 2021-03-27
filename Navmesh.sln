@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.UIWidgets", "Unity.UI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.InternalAPIEngineBridge.024", "Unity.InternalAPIEngineBridge.024.csproj", "{3BA0E5BE-EC6C-5411-F57A-313347994DF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{229DC04B-5E4B-D8A0-48C1-1C4440EEC2F9}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.UIWidgets.Editor", "Unity.UIWidgets.Editor.csproj", "{3C793A37-F1C1-0ABD-10A1-6C500F7A5B20}"
 EndProject
 Global
@@ -21,6 +23,10 @@ Global
 		{3BA0E5BE-EC6C-5411-F57A-313347994DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BA0E5BE-EC6C-5411-F57A-313347994DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BA0E5BE-EC6C-5411-F57A-313347994DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{229DC04B-5E4B-D8A0-48C1-1C4440EEC2F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{229DC04B-5E4B-D8A0-48C1-1C4440EEC2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{229DC04B-5E4B-D8A0-48C1-1C4440EEC2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{229DC04B-5E4B-D8A0-48C1-1C4440EEC2F9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3C793A37-F1C1-0ABD-10A1-6C500F7A5B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3C793A37-F1C1-0ABD-10A1-6C500F7A5B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C793A37-F1C1-0ABD-10A1-6C500F7A5B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
