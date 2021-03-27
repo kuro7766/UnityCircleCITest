@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{229DC04B-5E4B-D8A0-48C1-1C4440EEC2F9}</ProjectGuid>
+    <ProjectGuid>{34616B29-CFA6-3ABB-E232-90E9DFA1ACE5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -72,33 +72,35 @@
      <Compile Include="Assets\MyUI\Reusable\WhiteRoundBox.cs" />
      <Compile Include="Assets\MyUI\SpeedUp3D.cs" />
      <Compile Include="Assets\Scripts\UI.cs" />
+     <Compile Include="Assets\models\footb3\Click.cs" />
+     <Compile Include="Assets\models\footb3\scripts\RotateTest.cs" />
      <None Include="Assets\UIWidgets\Documentation\README.txt" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/unity/Editor/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -625,35 +627,35 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="UIWidgetsGallery.Editor.csproj">
-      <Project>{839A8B21-0757-C5CC-2506-D1504188A688}</Project>
+      <Project>{FCA01AF5-3CDC-77B2-E1E2-EC2BF5FCFE45}</Project>
       <Name>UIWidgetsGallery.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UIWidgetsGallery.csproj">
-      <Project>{362EB3AB-6C9E-0D65-6FE7-1512D15BBC84}</Project>
+      <Project>{4AB0F089-E01C-ECFF-E04C-C583AD815AE0}</Project>
       <Name>UIWidgetsGallery</Name>
     </ProjectReference>
     <ProjectReference Include="UIWidgetsTheatre.csproj">
-      <Project>{C92D9094-FF27-8182-ADE9-9A63576288FB}</Project>
+      <Project>{BD70E07F-584F-01F6-EBEE-857711ADFCC8}</Project>
       <Name>UIWidgetsTheatre</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.UIWidgets.Editor.csproj">
-      <Project>{3C793A37-F1C1-0ABD-10A1-6C500F7A5B20}</Project>
+      <Project>{B0371850-FACA-F376-4A44-99A4273FC329}</Project>
       <Name>Unity.UIWidgets.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UIWidgetsSample.Editor.csproj">
-      <Project>{10D824BD-DFC8-D094-AE47-CB419C276C6F}</Project>
+      <Project>{B4F89AC8-55C0-582C-5E24-F037D079A886}</Project>
       <Name>UIWidgetsSample.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.UIWidgets.csproj">
-      <Project>{8847D59E-E2CA-E432-3983-BEC04A4F30F6}</Project>
+      <Project>{B9F44842-31A0-BA39-B041-AD323902F64C}</Project>
       <Name>Unity.UIWidgets</Name>
     </ProjectReference>
     <ProjectReference Include="UIWidgetsSample.csproj">
-      <Project>{EB71739B-C068-177D-0E79-4F79D28331CC}</Project>
+      <Project>{694062E1-69A3-6CC4-0BC6-B3F33BA8F2B6}</Project>
       <Name>UIWidgetsSample</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InternalAPIEngineBridge.024.csproj">
-      <Project>{3BA0E5BE-EC6C-5411-F57A-313347994DF6}</Project>
+      <Project>{6EEBF03D-9ECB-930E-D0F7-764826E5B98A}</Project>
       <Name>Unity.InternalAPIEngineBridge.024</Name>
     </ProjectReference>
   </ItemGroup>

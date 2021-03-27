@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{362EB3AB-6C9E-0D65-6FE7-1512D15BBC84}</ProjectGuid>
+    <ProjectGuid>{4AB0F089-E01C-ECFF-E04C-C583AD815AE0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>UIWidgetsGallery</AssemblyName>
@@ -103,10 +103,10 @@
      <Compile Include="Assets\UIWidgets\Samples\UIWidgetsGallery\gallery\updater.cs" />
      <None Include="Assets\UIWidgets\Samples\UIWidgetsGallery\UIWidgetsGallery.asmdef" />
  <Reference Include="UnityEditor.UI">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/unity/Editor/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -648,7 +648,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.UIWidgets.csproj">
-      <Project>{8847D59E-E2CA-E432-3983-BEC04A4F30F6}</Project>
+      <Project>{B9F44842-31A0-BA39-B041-AD323902F64C}</Project>
       <Name>Unity.UIWidgets</Name>
     </ProjectReference>
   </ItemGroup>

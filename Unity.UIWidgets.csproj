@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8847D59E-E2CA-E432-3983-BEC04A4F30F6}</ProjectGuid>
+    <ProjectGuid>{B9F44842-31A0-BA39-B041-AD323902F64C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.UIWidgets</AssemblyName>
@@ -506,10 +506,10 @@
      <None Include="Assets\UIWidgets\Runtime\Resources\UIWidgets_canvas_stroke0.shader" />
      <None Include="Assets\UIWidgets\Runtime\Resources\UIWidgets_canvas_stroke1.shader" />
  <Reference Include="UnityEditor.UI">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/unity/Editor/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -1051,7 +1051,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.InternalAPIEngineBridge.024.csproj">
-      <Project>{3BA0E5BE-EC6C-5411-F57A-313347994DF6}</Project>
+      <Project>{6EEBF03D-9ECB-930E-D0F7-764826E5B98A}</Project>
       <Name>Unity.InternalAPIEngineBridge.024</Name>
     </ProjectReference>
   </ItemGroup>

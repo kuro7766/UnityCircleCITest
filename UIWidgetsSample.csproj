@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{EB71739B-C068-177D-0E79-4F79D28331CC}</ProjectGuid>
+    <ProjectGuid>{694062E1-69A3-6CC4-0BC6-B3F33BA8F2B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>UIWidgetsSample</AssemblyName>
@@ -92,10 +92,10 @@
      <Compile Include="Assets\UIWidgets\Samples\UIWidgetSample\txt\TextStyleSample.cs" />
      <None Include="Assets\UIWidgets\Samples\UIWidgetsSample.asmdef" />
  <Reference Include="UnityEditor.UI">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/unity/Editor/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -637,7 +637,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.UIWidgets.csproj">
-      <Project>{8847D59E-E2CA-E432-3983-BEC04A4F30F6}</Project>
+      <Project>{B9F44842-31A0-BA39-B041-AD323902F64C}</Project>
       <Name>Unity.UIWidgets</Name>
     </ProjectReference>
   </ItemGroup>

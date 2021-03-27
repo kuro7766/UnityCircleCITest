@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3C793A37-F1C1-0ABD-10A1-6C500F7A5B20}</ProjectGuid>
+    <ProjectGuid>{B0371850-FACA-F376-4A44-99A4273FC329}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.UIWidgets.Editor</AssemblyName>
@@ -61,16 +61,16 @@
      <Compile Include="Assets\UIWidgets\Editor\UIWidgetsPanelEditor.cs" />
      <None Include="Assets\UIWidgets\Editor\Unity.UIWidgets.Editor.asmdef" />
  <Reference Include="UnityEditor.UI">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.TestRunner">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>E:/code/unity/Navmesh/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/unity/Editor/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -265,7 +265,7 @@
  <HintPath>D:/unity/Editor/2019.4.12f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>E:/code/unity/Navmesh/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>E:/code/unity/AndroidFootBall/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/unity/Editor/2019.4.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -624,7 +624,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.UIWidgets.csproj">
-      <Project>{8847D59E-E2CA-E432-3983-BEC04A4F30F6}</Project>
+      <Project>{B9F44842-31A0-BA39-B041-AD323902F64C}</Project>
       <Name>Unity.UIWidgets</Name>
     </ProjectReference>
   </ItemGroup>
