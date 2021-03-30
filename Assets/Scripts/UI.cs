@@ -9,6 +9,7 @@ public class UI : MyApp
 {
     public override Widget getFlutterCode(BuildContext context)
     {
-        return new Center( child:new Text("Test github action build" ,style:new TextStyle(color: Colors.blue)));
+        return new Center( child:new Text("Welcome to football game" ,style:new TextStyle(color: Colors.black
+        ,fontSize:50)));
     }
 }
