@@ -44,9 +44,16 @@ public class UI : MyApp
         return
             new Stack(children: new List<Widget>
             {
-                new Align(alignment: Alignment.topCenter, child: new Text("Welcome to football game",
-                    style: new TextStyle(color: Colors.black
-                        , fontSize: 50))),
+                
+                new Align(alignment: Alignment.topCenter, child: 
+                    new Column(children:new  List<Widget>
+                    {
+                        new CircularProgressIndicator(),
+                        new Text("加载中",
+                            style: new TextStyle(color: Colors.black
+                                , fontSize: 30)),
+                    })
+                    ),
                 new GestureDetector(
                     child: new Container(color: Colors.transparent),
                     onPanUpdate: (details =>
