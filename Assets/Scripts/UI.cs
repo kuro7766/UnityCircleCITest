@@ -20,7 +20,7 @@ public class UI : MyApp
                             
                         }),child:new Text("menu")))
                     ,
-                new Center(child: new Text("Welcome to football game", style: new TextStyle(color: Colors.black
+                new Align(alignment: Alignment.topCenter,child: new Text("Welcome to football game", style: new TextStyle(color: Colors.black
                     , fontSize: 50)))
             });
        
