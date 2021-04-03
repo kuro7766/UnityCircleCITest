@@ -83,6 +83,7 @@
      <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
      <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
+     <Compile Include="Assets\Scripts\InputWrapper.cs" />
      <Compile Include="Assets\Scripts\UI.cs" />
      <Compile Include="Assets\models\footb3\Click.cs" />
      <Compile Include="Assets\models\footb3\scripts\RotateTest.cs" />
