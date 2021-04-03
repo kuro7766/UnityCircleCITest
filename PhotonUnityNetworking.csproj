@@ -75,6 +75,12 @@
      <Compile Include="Assets\Photon\PhotonUnityNetworking\Code\Views\PhotonRigidbodyView.cs" />
      <Compile Include="Assets\Photon\PhotonUnityNetworking\Code\Views\PhotonTransformView.cs" />
      <Compile Include="Assets\Photon\PhotonUnityNetworking\Code\Views\PhotonTransformViewClassic.cs" />
+     <Compile Include="Assets\Photon\PhotonUnityNetworking\Code\Views\PhotonTransformViewPositionControl.cs" />
+     <Compile Include="Assets\Photon\PhotonUnityNetworking\Code\Views\PhotonTransformViewPositionModel.cs" />
+     <Compile Include="Assets\Photon\PhotonUnityNetworking\Code\Views\PhotonTransformViewRotationControl.cs" />
+     <Compile Include="Assets\Photon\PhotonUnityNetworking\Code\Views\PhotonTransformViewRotationModel.cs" />
+     <Compile Include="Assets\Photon\PhotonUnityNetworking\Code\Views\PhotonTransformViewScaleControl.cs" />
+     <Compile Include="Assets\Photon\PhotonUnityNetworking\Code\Views\PhotonTransformViewScaleModel.cs" />
      <None Include="Assets\Photon\PhotonUnityNetworking\Code\PhotonUnityNetworking.asmdef" />
  <Reference Include="UnityEditor.UI">
  <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
