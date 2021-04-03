@@ -17,5 +17,8 @@ public class FootBallMotionScript : MonoBehaviour
         
     }
 
-    
+    private void OnCollisionEnter(Collision other)
+    {
+        // other.relativeVelocity.;
+    }
 }
