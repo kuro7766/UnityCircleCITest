@@ -59,11 +59,11 @@ public class UI : MyApp
                     {
                         for (int i = 0; i < 8; i++)
                         {
-                            if (i == 3)
+                            if (true)
                             {
                                 _barObjects[i].transform.RotateAround(_gameObjects[i].transform.position, Vector3.back,
-                                    4 * details.delta.dx);
-                                _barObjects[i].transform.Translate(0, 0, -details.delta.dy * 0.1f);
+                                    4 * details.delta.dx*0.1f);
+                                _barObjects[i].transform.Translate(0, 0, -details.delta.dy * 0.02f);
                             }
                         }
                     })

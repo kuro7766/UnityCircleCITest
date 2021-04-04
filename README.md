@@ -15,6 +15,8 @@ manifest.json 中加入 "com.unity.probuilder": "3.0.1"，回到unity后它会�
 - 球场范围设定
 - 足球框大小设定
 - 滑杆范围
+  - 旋转
+  - 移动
 - 特效
 
 ## 游戏UI
