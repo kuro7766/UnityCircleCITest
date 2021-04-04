@@ -44,30 +44,28 @@ public class UI : MyApp
         return
             new Stack(children: new List<Widget>
             {
-                
-                new Align(alignment: Alignment.topCenter, child: 
-                    new Column(children:new  List<Widget>
+                new Align(alignment: Alignment.topCenter, child:
+                    new Column(children: new List<Widget>
                     {
                         new CircularProgressIndicator(),
                         new Text("加载中",
                             style: new TextStyle(color: Colors.black
                                 , fontSize: 30)),
                     })
-                    ),
+                ),
                 new GestureDetector(
                     child: new Container(color: Colors.transparent),
                     onPanUpdate: (details =>
                     {
                         for (int i = 0; i < 8; i++)
                         {
-                            if (true)
+                            if (i == 3)
                             {
                                 _barObjects[i].transform.RotateAround(_gameObjects[i].transform.position, Vector3.back,
                                     4 * details.delta.dx);
                                 _barObjects[i].transform.Translate(0, 0, -details.delta.dy * 0.1f);
                             }
                         }
-
                     })
                 )
             });
@@ -75,10 +73,17 @@ public class UI : MyApp
 
     bool IsRed(int i)
     {
-        return i == 0 
+        return i == 0
                || i == 1
                || i == 3
                || i == 5
             ;
     }
+    
+    private static class FootballBar
+    {
+    
+    }
+    
 }
+
