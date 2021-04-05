@@ -59,7 +59,7 @@ public class UI : MyApp
                     {
                         for (int i = 0; i < 8; i++)
                         {
-                            if (true)
+                            if (IsRed(i))
                             {
                                 _barObjects[i].transform.RotateAround(_gameObjects[i].transform.position, Vector3.back,
                                     4 * details.delta.dx*0.1f);
