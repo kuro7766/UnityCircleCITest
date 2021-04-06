@@ -1,17 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using MyUI.Reusable;
+using pEventBus;
 using Unity.UIWidgets.material;
 using Unity.UIWidgets.painting;
 using Unity.UIWidgets.widgets;
 using UnityEngine;
 using Stack = Unity.UIWidgets.widgets.Stack;
 
-public class UI : MyApp
+public class UI : MyApp,IEventReceiver<ConnectionToMaster>
 {
     private GameObject[] _gameObjects;
     private GameObject[] _barObjects;
-
+    private String _msg="加载中";
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -37,6 +39,7 @@ public class UI : MyApp
             GameObject.Find("Group9"),
             GameObject.Find("Group12"),
         };
+        EventBus.Register(this);
     }
 
     public override Widget getFlutterCode(BuildContext context)
@@ -48,7 +51,7 @@ public class UI : MyApp
                     new Column(children: new List<Widget>
                     {
                         new CircularProgressIndicator(),
-                        new Text("加载中",
+                        new Text(_msg,
                             style: new TextStyle(color: Colors.black
                                 , fontSize: 30)),
                     })
@@ -79,11 +82,18 @@ public class UI : MyApp
                || i == 5
             ;
     }
-    
-    private static class FootballBar
+
+    protected override void OnDestroy()
     {
-    
+        base.OnDestroy();
+        EventBus.UnRegister(this);
     }
-    
+
+    public void OnEvent(ConnectionToMaster e)
+    {
+        _msg = "连接成功";
+        Debug.Log("recv");
+        setState((() => {}));
+    }
 }
 

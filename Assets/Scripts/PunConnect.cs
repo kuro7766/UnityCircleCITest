@@ -5,7 +5,8 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
-public class PunTest : MonoBehaviourPunCallbacks
+
+public class PunConnect : MonoBehaviourPunCallbacks
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +17,9 @@ public class PunTest : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         base.OnConnectedToMaster();
+        Debug.Log("pun connected");
         PhotonNetwork.JoinOrCreateRoom("0", new RoomOptions(){MaxPlayers = 20}, default);
-        Debug.Log("connected to master");
+        EventBus.Raise(new ConnectionToMaster());
     }
 
 }
