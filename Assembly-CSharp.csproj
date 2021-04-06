@@ -58,6 +58,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BasicEventBus-master\Assets\EventBusTest.cs" />
+     <Compile Include="Assets\BasicEventBus-master\Assets\pEventBus\EventBus.cs" />
+     <Compile Include="Assets\BasicEventBus-master\Assets\pEventBus\EventBusGeneric.cs" />
+     <Compile Include="Assets\BasicEventBus-master\Assets\pEventBus\Events.cs" />
      <Compile Include="Assets\MyBasic\SnapToGround.cs" />
      <Compile Include="Assets\MyUI\FirstUi.cs" />
      <Compile Include="Assets\MyUI\HelloUI.cs" />
@@ -95,6 +99,7 @@
      <None Include="Assets\UIWidgets\Documentation\README.txt" />
      <None Include="Assets\Photon\PhotonUnityNetworking\readme.txt" />
      <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
+     <None Include="Assets\BasicEventBus-master\ProjectSettings\ProjectVersion.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>E:/code/unity/AndroidFootBall/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
