@@ -10,16 +10,13 @@ public class PunTest : MonoBehaviourPunCallbacks
     void Start()
     {
         PhotonNetwork.ConnectUsingSettings();
-
     }
 
     public override void OnConnectedToMaster()
     {
         base.OnConnectedToMaster();
         PhotonNetwork.JoinOrCreateRoom("0", new RoomOptions(){MaxPlayers = 20}, default);
-        Debug.Log("to master");
-        Debug.Log(photonView);
-
+        Debug.Log("connected to master");
     }
 
 }

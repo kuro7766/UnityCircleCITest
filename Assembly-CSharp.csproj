@@ -71,7 +71,6 @@
      <Compile Include="Assets\MyUI\Reusable\RushThrough.cs" />
      <Compile Include="Assets\MyUI\Reusable\WhiteRoundBox.cs" />
      <Compile Include="Assets\MyUI\SpeedUp3D.cs" />
-     <Compile Include="Assets\NetWorkInitializer.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
      <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
@@ -86,7 +85,8 @@
      <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
      <Compile Include="Assets\Scripts\FootBallMotionScript.cs" />
      <Compile Include="Assets\Scripts\InputWrapper.cs" />
-     <Compile Include="Assets\Scripts\PunTest.cs" />
+     <Compile Include="Assets\Scripts\NetWorkInitializer.cs" />
+     <Compile Include="Assets\Scripts\PunConnect.cs" />
      <Compile Include="Assets\Scripts\UI.cs" />
      <Compile Include="Assets\models\footb3\Click.cs" />
      <Compile Include="Assets\models\footb3\scripts\RotateTest.cs" />
@@ -670,17 +670,37 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj">
+      <Project>{09EC7E4A-2EAD-F503-1649-A3F2C464FD69}</Project>
+      <Name>PhotonUnityNetworking.Utilities.PhotonPlayer.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="UIWidgetsGallery.Editor.csproj">
       <Project>{FCA01AF5-3CDC-77B2-E1E2-EC2BF5FCFE45}</Project>
       <Name>UIWidgetsGallery.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="PunDemos.DemoHubEditor.csproj">
+      <Project>{76D05CBE-234B-1033-F270-1ABA8EA22B35}</Project>
+      <Name>PunDemos.DemoHubEditor</Name>
     </ProjectReference>
     <ProjectReference Include="UIWidgetsGallery.csproj">
       <Project>{4AB0F089-E01C-ECFF-E04C-C583AD815AE0}</Project>
       <Name>UIWidgetsGallery</Name>
     </ProjectReference>
+    <ProjectReference Include="PunDemos.DemoSlotcarEditor.csproj">
+      <Project>{38CA98E4-D457-D8EB-C562-DAF4FD089A32}</Project>
+      <Name>PunDemos.DemoSlotcarEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="UIWidgetsTheatre.csproj">
       <Project>{BD70E07F-584F-01F6-EBEE-857711ADFCC8}</Project>
       <Name>UIWidgetsTheatre</Name>
+    </ProjectReference>
+    <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
+      <Project>{46A4AED3-B0D8-A2A6-03CF-0728B8A32A0A}</Project>
+      <Name>PhotonUnityNetworking.Demos</Name>
+    </ProjectReference>
+    <ProjectReference Include="PhotonUnityNetworking.Utilities.csproj">
+      <Project>{2EAD8E6C-8E1B-3112-7B17-06F367256A70}</Project>
+      <Name>PhotonUnityNetworking.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.UIWidgets.Editor.csproj">
       <Project>{B0371850-FACA-F376-4A44-99A4273FC329}</Project>
@@ -697,30 +717,6 @@
     <ProjectReference Include="UIWidgetsSample.csproj">
       <Project>{694062E1-69A3-6CC4-0BC6-B3F33BA8F2B6}</Project>
       <Name>UIWidgetsSample</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InternalAPIEngineBridge.024.csproj">
-      <Project>{6EEBF03D-9ECB-930E-D0F7-764826E5B98A}</Project>
-      <Name>Unity.InternalAPIEngineBridge.024</Name>
-    </ProjectReference>
-    <ProjectReference Include="PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj">
-      <Project>{09EC7E4A-2EAD-F503-1649-A3F2C464FD69}</Project>
-      <Name>PhotonUnityNetworking.Utilities.PhotonPlayer.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="PunDemos.DemoHubEditor.csproj">
-      <Project>{76D05CBE-234B-1033-F270-1ABA8EA22B35}</Project>
-      <Name>PunDemos.DemoHubEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="PunDemos.DemoSlotcarEditor.csproj">
-      <Project>{38CA98E4-D457-D8EB-C562-DAF4FD089A32}</Project>
-      <Name>PunDemos.DemoSlotcarEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
-      <Project>{46A4AED3-B0D8-A2A6-03CF-0728B8A32A0A}</Project>
-      <Name>PhotonUnityNetworking.Demos</Name>
-    </ProjectReference>
-    <ProjectReference Include="PhotonUnityNetworking.Utilities.csproj">
-      <Project>{2EAD8E6C-8E1B-3112-7B17-06F367256A70}</Project>
-      <Name>PhotonUnityNetworking.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonWebSocket.csproj">
       <Project>{BCE0CD33-49B1-EDE7-2102-07AC31979EEA}</Project>
@@ -745,6 +741,10 @@
     <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
       <Project>{82CAAC22-51A7-76DC-DC27-164027F6F945}</Project>
       <Name>PhotonUnityNetworking.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEngineBridge.024.csproj">
+      <Project>{6EEBF03D-9ECB-930E-D0F7-764826E5B98A}</Project>
+      <Name>Unity.InternalAPIEngineBridge.024</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

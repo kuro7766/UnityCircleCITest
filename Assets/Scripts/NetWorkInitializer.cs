@@ -16,8 +16,8 @@ public class NetWorkInitializer : MonoBehaviourPun
     private void Update()
     {
         // Debug.Log(photonView);
-        Debug.Log(PhotonNetwork.MasterClient);
-        Debug.Log(photonView.Controller);
+        // Debug.Log(PhotonNetwork.MasterClient);
+        // Debug.Log(photonView.Controller);
         // if(photonView.Owner.Equals(PhotonNetwork.MasterClient))
         // Debug.Log(photonView);
     }
