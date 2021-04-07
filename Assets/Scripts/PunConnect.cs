@@ -22,4 +22,9 @@ public class PunConnect : MonoBehaviourPunCallbacks
         EventBus.Raise(new ConnectionToMaster());
     }
 
+    [PunRPC]
+    void c()
+    {
+        photonView.RPC("ChatMessage", RpcTarget.All, "jup", "and jup.");
+    }
 }
