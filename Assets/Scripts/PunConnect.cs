@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using MyEvents;
+using MyMessage;
 using pEventBus;
 using Photon.Pun;
 using Photon.Realtime;
@@ -9,7 +10,7 @@ using Unity.UIWidgets.widgets;
 using UnityEngine;
 
 
-public class PunConnect : MonoBehaviourPunCallbacks, IEventReceiver<ChatMessage>,IEventReceiver<PunEvent>
+public class PunConnect : MonoBehaviourPunCallbacks, IEventReceiver<ChatMessage>, IEventReceiver<PunEvent>
 {
     // Start is called before the first frame update
     void Start()
@@ -22,20 +23,43 @@ public class PunConnect : MonoBehaviourPunCallbacks, IEventReceiver<ChatMessage>
     {
         base.OnConnectedToMaster();
         Debug.Log("pun connected");
-        PhotonNetwork.JoinOrCreateRoom("0", new RoomOptions() {MaxPlayers = 20}, default);
         EventBus.Raise(new ConnectionToMaster());
+        PhotonNetwork.JoinLobby();
+
+
     }
 
     [PunRPC]
     void Message(String msg)
     {
-        Debug.Log("PunRpc : " + msg);
+        Debug.Log("MSGLIST-ADD : " + msg);
         EventBus.Raise(new UiMessage(msg));
+    }
+
+    [PunRPC]
+    void ClientMessage()
+    {
+    }
+
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        base.OnRoomListUpdate(roomList);
+        EventBus.Raise(new RoomUpdate()
+        {
+            RoomInfos = roomList
+        });
+    }
+
+    public override void OnJoinedLobby()
+    {
+        base.OnJoinedLobby();
+        PhotonNetwork.JoinOrCreateRoom("0", new RoomOptions() {MaxPlayers = 2}, default);
     }
 
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
+
         Debug.Log("joined room" + PhotonNetwork.CurrentRoom);
         photonView.RPC("Message", RpcTarget.AllBufferedViaServer, photonView.Owner + " joined room");
     }
@@ -54,6 +78,5 @@ public class PunConnect : MonoBehaviourPunCallbacks, IEventReceiver<ChatMessage>
 
     public void OnEvent(PunEvent e)
     {
-        
     }
 }

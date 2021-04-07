@@ -15,7 +15,7 @@ public class UI : MyApp, IEventReceiver<ConnectionToMaster>, IEventReceiver<UiMe
 {
     private GameObject[] _gameObjects;
     private GameObject[] _barObjects;
-    private String _msg = "加载中";
+    private String _msg = "loading...";
     private bool _msgVisibility = false;
     private List<Widget> _msgList = new List<Widget>();
     private TextEditingController _controller = new TextEditingController();
@@ -51,74 +51,80 @@ public class UI : MyApp, IEventReceiver<ConnectionToMaster>, IEventReceiver<UiMe
     public override Widget getFlutterCode(BuildContext context)
     {
         return
-            new SafeArea(child: new Stack(children: new List<Widget>
-            {
-                new GestureDetector(
-                    child: new Container(color: Colors.transparent),
-                    onPanUpdate: (details =>
+            new SafeArea(child:
+                new Scaffold(
+                    backgroundColor: Colors.transparent
+                    , body: new Stack(children: new List<Widget>
                     {
-                        for (int i = 0; i < 8; i++)
-                        {
-                            if (IsRed(i))
+                        new GestureDetector(
+                            child: new Container(color: Colors.transparent),
+                            onPanUpdate: (details =>
                             {
-                                _barObjects[i].transform.RotateAround(_gameObjects[i].transform.position, Vector3.back,
-                                    4 * details.delta.dx * 0.1f);
-                                _barObjects[i].transform.Translate(0, 0, -details.delta.dy * 0.02f);
-                            }
-                        }
-                    })
-                ),
-                new Align(alignment: Alignment.topLeft, child: new Row(
-                    children: new List<Widget>
-                    {
-                        new Visibility(child:
-                            new SizedBox(width: 200, child:
-                                new Container(color: Colors.lightBlue, child: new Column(children: new List<Widget>
+                                for (int i = 0; i < 8; i++)
                                 {
-                                    new Expanded(
-                                        child: new ListView(children:
-                                            _msgList
-                                        )
-                                    ),
-                                    new GestureDetector(child: new Container(width: float.PositiveInfinity, child:
-                                        new WhiteRoundBox(child:
-                                            new TextField(onSubmitted: (value =>
-                                                {
-                                                    Debug.Log(value);
-                                                    EventBus.Raise(new ChatMessage()
-                                                        {
-                                                            msg = value
-                                                        }
-                                                    );
-                                                    _controller.text = "";
-                                                }),
-                                                controller: _controller, onTap: (() => { }))
-                                        )
-                                    ))
-                                }))
-                            )
-                            , visible: _msgVisibility),
-                        new Align(alignment: Alignment.topCenter, child: new GestureDetector(child:
-                            new WhiteRoundBox(child: new Text(!_msgVisibility ? "展开" : "收回"))
-                            , onTap: (() =>
+                                    if (IsRed(i))
+                                    {
+                                        _barObjects[i].transform.RotateAround(_gameObjects[i].transform.position,
+                                            Vector3.back,
+                                            4 * details.delta.dx * 0.1f);
+                                        _barObjects[i].transform.Translate(0, 0, -details.delta.dy * 0.02f);
+                                    }
+                                }
+                            })
+                        ),
+                        new Align(alignment: Alignment.topLeft, child: new Row(
+                            children: new List<Widget>
                             {
-                                _msgVisibility = !_msgVisibility;
-                                setState();
-                            })))
-                    }
-                )),
+                                new Visibility(child:
+                                    new SizedBox(width: 200, child:
+                                        new Container(color: Colors.lightBlue, child: new Column(
+                                            children: new List<Widget>
+                                            {
+                                                new Expanded(
+                                                    child: new ListView(children:
+                                                        _msgList
+                                                    )
+                                                ),
+                                                new Container(width: float.PositiveInfinity, child:
+                                                    new WhiteRoundBox(child:
+                                                        new TextField(onSubmitted: (value =>
+                                                            {
+                                                                Debug.Log(value);
+                                                                EventBus.Raise(new ChatMessage()
+                                                                    {
+                                                                        msg = value
+                                                                    }
+                                                                );
+                                                                _controller.text = "";
+                                                            }),
+                                                            controller: _controller, onTap: (() => { }))
+                                                    )
+                                                )
+                                            }))
+                                    )
+                                    , visible: _msgVisibility),
+                                new Align(alignment: Alignment.topCenter, child: new GestureDetector(child:
+                                    new WhiteRoundBox(child: new Text(!_msgVisibility ? "展开" : "收回"))
+                                    , onTap: (() =>
+                                    {
+                                        _msgVisibility = !_msgVisibility;
+                                        setState();
+                                    })))
+                            }
+                        )),
 
-                new Align(alignment: Alignment.topCenter, child:
-                    new Column(children: new List<Widget>
-                    {
-                        new CircularProgressIndicator(),
-                        new Text(_msg,
-                            style: new TextStyle(color: Colors.black
-                                , fontSize: 30)),
-                    })
-                ),
-            }));
-        ;
+                        new Align(alignment: Alignment.topCenter, child:
+                            new Column(children: new List<Widget>
+                            {
+                                new Visibility(visible: _msg.Length != 0, child:
+                                    new CircularProgressIndicator()),
+                                new Text(_msg,
+                                    style: new TextStyle(color: Colors.black
+                                        , fontSize: 30)),
+                            })
+                        ),
+                    }), resizeToAvoidBottomInset: true)
+            );
     }
 
     bool IsRed(int i)
@@ -138,9 +144,9 @@ public class UI : MyApp, IEventReceiver<ConnectionToMaster>, IEventReceiver<UiMe
 
     public void OnEvent(ConnectionToMaster e)
     {
-        _msg = "连接成功";
+        _msg = "";
         List<Widget> n = new List<Widget>(_msgList);
-        n.Add(new Text("连接成功"));
+        n.Add(new Text("connected to server !"));
         _msgList = n;
         Debug.Log("recv");
         setState((() => { }));
