@@ -1,22 +1,25 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using MyEvents;
 using MyUI.Reusable;
 using pEventBus;
+using Photon.Pun;
 using Unity.UIWidgets.material;
 using Unity.UIWidgets.painting;
 using Unity.UIWidgets.widgets;
 using UnityEngine;
 using Stack = Unity.UIWidgets.widgets.Stack;
 
-public class UI : MyApp, IEventReceiver<ConnectionToMaster>
+public class UI : MyApp, IEventReceiver<ConnectionToMaster>, IEventReceiver<UiMessage>
 {
     private GameObject[] _gameObjects;
     private GameObject[] _barObjects;
     private String _msg = "加载中";
     private bool _msgVisibility = false;
     private List<Widget> _msgList = new List<Widget>();
-    private TextEditingController _controller=new TextEditingController();
+    private TextEditingController _controller = new TextEditingController();
+
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -48,7 +51,7 @@ public class UI : MyApp, IEventReceiver<ConnectionToMaster>
     public override Widget getFlutterCode(BuildContext context)
     {
         return
-            new Stack(children: new List<Widget>
+            new SafeArea(child: new Stack(children: new List<Widget>
             {
                 new GestureDetector(
                     child: new Container(color: Colors.transparent),
@@ -79,25 +82,24 @@ public class UI : MyApp, IEventReceiver<ConnectionToMaster>
                                     ),
                                     new GestureDetector(child: new Container(width: float.PositiveInfinity, child:
                                         new WhiteRoundBox(child:
-                                            new TextField( onSubmitted:(value =>
-                                            {
-                                                Debug.Log(value);
-                                            }), controller: _controller, onTap:(() =>
-                                            {
-                                                
-                                            }))
-                                            )
-                                    ), onTap: (() =>
-                                    {
-                                        _msgList=new List<Widget>(_msgList);
-                                        _msgList.Add(new Text("test"));
-                                        setState();
-                                    }))
+                                            new TextField(onSubmitted: (value =>
+                                                {
+                                                    Debug.Log(value);
+                                                    EventBus.Raise(new ChatMessage()
+                                                        {
+                                                            msg = value
+                                                        }
+                                                    );
+                                                    _controller.text = "";
+                                                }),
+                                                controller: _controller, onTap: (() => { }))
+                                        )
+                                    ))
                                 }))
                             )
                             , visible: _msgVisibility),
                         new Align(alignment: Alignment.topCenter, child: new GestureDetector(child:
-                            new WhiteRoundBox(child: new Text(!_msgVisibility?"展开":"收回"))
+                            new WhiteRoundBox(child: new Text(!_msgVisibility ? "展开" : "收回"))
                             , onTap: (() =>
                             {
                                 _msgVisibility = !_msgVisibility;
@@ -115,7 +117,8 @@ public class UI : MyApp, IEventReceiver<ConnectionToMaster>
                                 , fontSize: 30)),
                     })
                 ),
-            });
+            }));
+        ;
     }
 
     bool IsRed(int i)
@@ -136,10 +139,22 @@ public class UI : MyApp, IEventReceiver<ConnectionToMaster>
     public void OnEvent(ConnectionToMaster e)
     {
         _msg = "连接成功";
-        List<Widget> n=new List<Widget>(_msgList);
+        List<Widget> n = new List<Widget>(_msgList);
         n.Add(new Text("连接成功"));
         _msgList = n;
         Debug.Log("recv");
         setState((() => { }));
+    }
+
+    private void AddMsg(String msg)
+    {
+        _msgList = new List<Widget>(_msgList);
+        _msgList.Add(new Text(msg));
+        setState();
+    }
+
+    public void OnEvent(UiMessage e)
+    {
+        AddMsg(e.msg);
     }
 }
