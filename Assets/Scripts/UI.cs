@@ -16,7 +16,7 @@ public class UI : MyApp, IEventReceiver<ConnectionToMaster>
     private String _msg = "加载中";
     private bool _msgVisibility = false;
     private List<Widget> _msgList = new List<Widget>();
-
+    private TextEditingController _controller=new TextEditingController();
     protected override void OnEnable()
     {
         base.OnEnable();
@@ -78,7 +78,15 @@ public class UI : MyApp, IEventReceiver<ConnectionToMaster>
                                         )
                                     ),
                                     new GestureDetector(child: new Container(width: float.PositiveInfinity, child:
-                                        new WhiteRoundBox(child: new Text("btm"))
+                                        new WhiteRoundBox(child:
+                                            new TextField( onSubmitted:(value =>
+                                            {
+                                                Debug.Log(value);
+                                            }), controller: _controller, onTap:(() =>
+                                            {
+                                                
+                                            }))
+                                            )
                                     ), onTap: (() =>
                                     {
                                         _msgList=new List<Widget>(_msgList);
@@ -89,7 +97,7 @@ public class UI : MyApp, IEventReceiver<ConnectionToMaster>
                             )
                             , visible: _msgVisibility),
                         new Align(alignment: Alignment.topCenter, child: new GestureDetector(child:
-                            new WhiteRoundBox(child: new Text(_msgVisibility?"展开":"收回"))
+                            new WhiteRoundBox(child: new Text(!_msgVisibility?"展开":"收回"))
                             , onTap: (() =>
                             {
                                 _msgVisibility = !_msgVisibility;

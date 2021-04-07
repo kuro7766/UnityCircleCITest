@@ -22,7 +22,7 @@ class _CustomActivityIndicatorStateX : State<NEWU>
     private String _msg = "加载中";
     private bool _msgVisibility = false;
     private List<Widget> _msgList = new List<Widget>();
-
+    private TextEditingController _controller=new TextEditingController();
     public override void initState()
     {
         base.initState();
@@ -62,7 +62,10 @@ class _CustomActivityIndicatorStateX : State<NEWU>
                             )
                             , visible: _msgVisibility),
                         new Align(alignment: Alignment.topCenter, child: new GestureDetector(child:
-                            new WhiteRoundBox(child: new Text("dflkj"))
+                            new WhiteRoundBox(child: 
+                                new SizedBox(width:100,child:new TextField())
+                                
+                                )
                             , onTap: (() =>
                             {
                                 _msgVisibility = !_msgVisibility;

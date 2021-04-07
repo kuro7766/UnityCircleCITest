@@ -91,9 +91,9 @@
      <Compile Include="Assets\Scripts\Events\ConnectToMaster.cs" />
      <Compile Include="Assets\Scripts\FootBallMotionScript.cs" />
      <Compile Include="Assets\Scripts\InputWrapper.cs" />
-     <Compile Include="Assets\Scripts\NEWU.cs" />
-     <Compile Include="Assets\Scripts\NEWUI.cs" />
      <Compile Include="Assets\Scripts\PunConnect.cs" />
+     <Compile Include="Assets\Scripts\Test\NEWU.cs" />
+     <Compile Include="Assets\Scripts\Test\NEWUI.cs" />
      <Compile Include="Assets\Scripts\UI.cs" />
      <Compile Include="Assets\models\footb3\Click.cs" />
      <Compile Include="Assets\models\footb3\scripts\RotateTest.cs" />
