@@ -31,7 +31,7 @@ public class BeforGame : MyApp, IEventReceiver<ConnectionToMaster>, IEventReceiv
         return new Scaffold(
             backgroundColor: Colors.transparent,
             body:
-            new ListView(children:
+            new Column(children:
                 new List<Widget>
                 {
                     new Column(
