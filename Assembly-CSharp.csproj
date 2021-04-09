@@ -89,6 +89,7 @@
      <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
      <Compile Include="Assets\Scripts\BallShadow.cs" />
      <Compile Include="Assets\Scripts\BeforGame.cs" />
+     <Compile Include="Assets\Scripts\Debugger.cs" />
      <Compile Include="Assets\Scripts\Events\ConnectToMaster.cs" />
      <Compile Include="Assets\Scripts\Events\Messages.cs" />
      <Compile Include="Assets\Scripts\FootBallMotionScript.cs" />

@@ -82,6 +82,8 @@ class _CustomActivityIndicatorState : State<MyWidgetParent>, TickerProvider
     public override Widget build(BuildContext context)
     {
         return this.widget.builder(context);
+        
+        
         // return new AnimatedBuilder(
         //     animation: this._controller,
         //     builder: (cxt, widget) => { return this.widget.builder(context); }

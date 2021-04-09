@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.UIWidgets.animation;
 using Unity.UIWidgets.engine;
 using Unity.UIWidgets.foundation;
+using Unity.UIWidgets.material;
 using Unity.UIWidgets.painting;
 using Unity.UIWidgets.rendering;
 using Unity.UIWidgets.scheduler;
@@ -25,16 +26,21 @@ public abstract class MyApp : UIWidgetsPanel
     
     protected override Widget createWidget()
     {
-//        Debug.Log("createwidget");
+
         widget = new MyWidgetParent(builder: (context => getFlutterCode(context)));
-        return new WidgetsApp(
-            home: widget,
-            pageRouteBuilder: (RouteSettings settings, WidgetBuilder builder) =>
-                new PageRouteBuilder(
-                    settings: settings,
-                    pageBuilder: (BuildContext context, Animation<float> animation,
-                        Animation<float> secondaryAnimation) => builder(context)
-                )
-        );
+        
+        return new MaterialApp(
+            home: widget
+            );
+        
+        // return new WidgetsApp(
+        //     home: widget,
+        //     pageRouteBuilder: (RouteSettings settings, WidgetBuilder builder) =>
+        //         new PageRouteBuilder(
+        //             settings: settings,
+        //             pageBuilder: (BuildContext context, Animation<float> animation,
+        //                 Animation<float> secondaryAnimation) => builder(context)
+        //         )
+        // );
     }
 }

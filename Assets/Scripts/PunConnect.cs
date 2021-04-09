@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using MyEvents;
 using MyMessage;
 using pEventBus;
@@ -25,8 +26,6 @@ public class PunConnect : MonoBehaviourPunCallbacks, IEventReceiver<ChatMessage>
         Debug.Log("pun connected");
         EventBus.Raise(new ConnectionToMaster());
         PhotonNetwork.JoinLobby();
-
-
     }
 
     [PunRPC]
@@ -44,6 +43,11 @@ public class PunConnect : MonoBehaviourPunCallbacks, IEventReceiver<ChatMessage>
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         base.OnRoomListUpdate(roomList);
+        foreach (var r in roomList)
+        {
+            Debugger.Log(3, r.Name);
+        }
+
         EventBus.Raise(new RoomUpdate()
         {
             RoomInfos = roomList
@@ -53,7 +57,7 @@ public class PunConnect : MonoBehaviourPunCallbacks, IEventReceiver<ChatMessage>
     public override void OnJoinedLobby()
     {
         base.OnJoinedLobby();
-        PhotonNetwork.JoinOrCreateRoom("0", new RoomOptions() {MaxPlayers = 2}, default);
+        Debugger.Log(2, PhotonNetwork.CountOfRooms + "");
     }
 
     public override void OnJoinedRoom()

@@ -5,9 +5,11 @@ using MyEvents;
 using MyMessage;
 using pEventBus;
 using Photon.Pun;
+using Photon.Realtime;
 using Unity.UIWidgets.material;
 using Unity.UIWidgets.widgets;
 using UnityEngine;
+using Color = Unity.UIWidgets.ui.Color;
 
 public class BeforGame : MyApp, IEventReceiver<ConnectionToMaster>, IEventReceiver<RoomUpdate>
 {
@@ -28,34 +30,60 @@ public class BeforGame : MyApp, IEventReceiver<ConnectionToMaster>, IEventReceiv
 
     public override Widget getFlutterCode(BuildContext context)
     {
-        return new Scaffold(
-            backgroundColor: Colors.transparent,
-            body:
-            new Column(children:
-                new List<Widget>
-                {
-                    new Column(
-                        children: new List<Widget>
-                        {
-                            new Text("input user nickname"),
-                            new TextField(controller: _editingController),
+        return
+            new Scaffold(
+                backgroundColor: Colors.transparent,
+                body:
+                new Column(children:
+                    new List<Widget>
+                    {
+                        new Text("input user nickname"),
+                        new TextField(controller: _editingController),
 
-                            new InkWell(onTap: (() => { }), child:
+                        new Builder(builder: (buildContext =>
+                        {
+                            return new InkWell(
+                                onTap: (() =>
+                                {
+                                    Scaffold.of(buildContext).showSnackBar(
+                                        new SnackBar(content:
+                                            new Text("snsldkf")));
+                                    PhotonNetwork.JoinOrCreateRoom(_editingController.text,
+                                        new RoomOptions() {MaxPlayers = 2}, default);
+                                }), child:
                                 new SizedBox(height: 50, child:
                                     new Center(child:
                                         new Text("login")))
-                            )
-                        }
-                    ),
-                    new Column(
-                        children: rooms
-                    )
-                }
-            )
-            ,
-            resizeToAvoidBottomInset:
-            true
-        );
+                            );
+                        })),
+
+                        new Expanded(child:
+                            new ListView(children: GetRooms())),
+                    }
+                )
+                ,
+                resizeToAvoidBottomInset:
+                true
+            );
+    }
+
+    private List<Widget> GetRooms()
+    {
+        Debug.Log("xxx " + rooms.Count);
+
+        if (rooms.Count > 0)
+        {
+            return rooms;
+        }
+        else
+        {
+            List<Widget> list = new List<Widget>();
+            list.Add(
+                new Text("empty")
+            );
+            Debugger.Log(1, list.Count + "");
+            return list;
+        }
     }
 
     public void OnEvent(ConnectionToMaster e)
@@ -69,11 +97,12 @@ public class BeforGame : MyApp, IEventReceiver<ConnectionToMaster>, IEventReceiv
         Debug.Log("ON ROOM UPDATE -");
         Debug.Log(e.RoomInfos.Count);
         rooms = new List<Widget>(rooms);
-        
+
         foreach (var r in e.RoomInfos)
         {
-            rooms.Add(new RaisedButton(child: new Text(r.Name + r.PlayerCount)));
+            rooms.Add(new RaisedButton(onPressed: (() => { }), child: new Text(r.Name + r.PlayerCount)));
         }
+
         setState();
     }
 }
